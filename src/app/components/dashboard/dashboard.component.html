@@ -10,10 +10,14 @@
             <img [src]="urlImagen" alt="img_clima" width="300px" height="300px">
         </div>
         <div class="col-lg-6">
-            <input type="text" [(ngModel)]="ciudad" class="form-control form-control-lg size"
-                placehOlder="Ingrese Ciudad">
-            <button (click)="obtenerClima()" class="btn btn-primary btn-lg btn-block mt-4 size"
-            [disabled]="ciudad == ''">OBTENER CLIMA</button>
+            <input type="text" [(ngModel)]="ciudad" 
+                   class="form-control form-control-lg size"
+                   placehOlder="Ingrese Ciudad"
+                   (keyup.enter)="obtenerClima()">
+            <button (click)="obtenerClima()"                    
+                    class="btn btn-primary btn-lg btn-block mt-4 size"
+                    
+                    [disabled]="ciudad == ''">OBTENER CLIMA</button>
 
             <div *ngIf="loading" class="text-center mt-3">
                 <div class="spinner-grow text-primary" role="status"></div>
